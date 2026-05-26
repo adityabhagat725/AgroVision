@@ -96,7 +96,7 @@ export default function DiseaseDetection() {
     if (cropType !== 'Auto-detect') formData.append('crop_type', cropType);
 
     try {
-      const res = await fetch('http://localhost:5000/detect-disease', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/detect-disease`, {
         method: 'POST',
         body: formData
       });

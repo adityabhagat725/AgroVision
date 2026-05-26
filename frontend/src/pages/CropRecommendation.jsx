@@ -55,7 +55,7 @@ export default function CropRecommendation() {
     setResult(null);
 
     try {
-      const res = await fetch('http://localhost:5000/predict-crop', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/predict-crop`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

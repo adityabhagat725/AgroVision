@@ -6,3 +6,4 @@ torchvision
 numpy
 pandas
 Pillow
+gunicorn

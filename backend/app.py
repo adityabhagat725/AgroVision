@@ -18,8 +18,9 @@ CORS(app)
 prediction_history = []
 
 # Model paths
-CROP_MODEL_PATH = "../ml_models/crop_recommendation_model.pkl"
-DISEASE_MODEL_PATH = "../ml_models/disease_detection_model.pth"
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+CROP_MODEL_PATH = os.path.join(BASE_DIR, "ml_models", "crop_recommendation_model.pkl")
+DISEASE_MODEL_PATH = os.path.join(BASE_DIR, "ml_models", "disease_detection_model.pth")
 
 # Load Crop Recommendation Model
 crop_model_data = None

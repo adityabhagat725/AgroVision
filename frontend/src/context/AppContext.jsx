@@ -39,7 +39,7 @@ export const AppProvider = ({ children }) => {
   const fetchHistory = async () => {
     try {
       setLoadingHistory(true);
-      const res = await fetch('http://localhost:5000/history');
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/history`);
       if (res.ok) {
         const data = await res.json();
         setHistory(data);
@@ -64,7 +64,7 @@ export const AppProvider = ({ children }) => {
   const clearHistory = async () => {
     setHistory([]);
     try {
-      await fetch('http://localhost:5000/history/clear', { method: 'POST' });
+      await fetch(`${import.meta.env.VITE_API_URL}/history/clear`, { method: 'POST' });
     } catch (e) {
       console.warn("Backend server not reachable to clear history.");
     }
